@@ -2,6 +2,8 @@ using BancoSnorlax.Domain.Entities;
 using System;
 using Xunit;
 using FluentAssertions;
+using Moq;
+using BancoSnorlax.Domain.Contracts;
 
 namespace BancoSnorlax.Test
 {
@@ -11,7 +13,7 @@ namespace BancoSnorlax.Test
 
         public BancoSnorlaxAccount()
         {
-            _account ??= new Account() { Agency = 1, Number = 1000, NegativeSale = -1000.00 };
+            _account ??= new Account { Agency = 1, Number = 1000, Sale = 1000.00, NegativeSale = -1000.00 };
         }
 
         [Fact]

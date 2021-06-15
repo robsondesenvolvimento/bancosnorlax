@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BancoSnorlax.Test", "BancoSnorlax.Test\BancoSnorlax.Test.csproj", "{8DB5FAB3-C027-4C74-BA1E-51DAAF49D613}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoSnorlax.Domain", "BancoSnorlax.Domain\BancoSnorlax.Domain.csproj", "{A7C05523-EAFD-42AD-96F1-84B05D4FF962}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BancoSnorlax.Domain", "BancoSnorlax.Domain\BancoSnorlax.Domain.csproj", "{A7C05523-EAFD-42AD-96F1-84B05D4FF962}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoSnorlax.Data", "BancoSnorlax.Data\BancoSnorlax.Data.csproj", "{F35868CE-97A6-468D-AA77-206BE358BF41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A7C05523-EAFD-42AD-96F1-84B05D4FF962}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7C05523-EAFD-42AD-96F1-84B05D4FF962}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7C05523-EAFD-42AD-96F1-84B05D4FF962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F35868CE-97A6-468D-AA77-206BE358BF41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F35868CE-97A6-468D-AA77-206BE358BF41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F35868CE-97A6-468D-AA77-206BE358BF41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F35868CE-97A6-468D-AA77-206BE358BF41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
