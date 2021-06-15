@@ -14,6 +14,11 @@ namespace BancoSnorlax.Data.Context
         {
         }
 
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured) optionsBuilder.UseInMemoryDatabase("Teste");
+        //}
+
         public DbSet<Account> Accounts { get; set; }
     }
 }

@@ -5,13 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.7" />
+    <PackageReference Include="FluentValidation" Version="10.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BancoSnorlax.Domain\BancoSnorlax.Domain.csproj" />
-    <ProjectReference Include="..\BancoSnorlax.Services.Common\BancoSnorlax.Services.Common.csproj" />
   </ItemGroup>
 
 </Project>

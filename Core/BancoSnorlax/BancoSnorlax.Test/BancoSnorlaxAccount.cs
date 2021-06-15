@@ -4,44 +4,32 @@ using Xunit;
 using FluentAssertions;
 using Moq;
 using BancoSnorlax.Domain.Contracts;
+using BancoSnorlax.Data.Context;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using BancoSnorlax.Data.Repositories;
+using BancoSnorlax.Services.Common.Validators;
+using BancoSnorlax.Services.Common.Erros;
 
 namespace BancoSnorlax.Test
 {
     public class BancoSnorlaxAccount
     {
-        private Account _account;
-
-        public BancoSnorlaxAccount()
-        {
-            _account ??= new Account { Agency = 1, Number = 1000, Sale = 1000.00, NegativeSale = -1000.00 };
-        }
-
         [Fact]
-        public void BancoSnorlaxConfirmImmutableNewAccount()
+        public void BancoSnorlaTryExceptValidatorAgencyAndNegativeValue()
         {
-            _account.Agency.Should().BeOneOf(1);
-            _account.Number.Should().BeOneOf(1000);
-        }
+            var options = new DbContextOptionsBuilder<DatabaseContext>()
+                .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                .Options;
 
-        [Fact]
-        public void BancoSnorlaxSetPositiveSale()
-        {
-            _account.Sale = 1000;
-            _account.Sale.Should().BePositive();
-        }
+            var _accountRepository = new AccountRepository(new(options));            
 
-        [Fact]
-        public void BancoSnorlaxSetNegativeSale()
-        {
-            _account.Sale = -1000;
-            _account.Sale.Should().BeNegative();
-        }
+            var account = new Account { Agency = 0, Number = 1000, Sale = 1000.00, NegativeSale = -1001.00 };
 
-        [Fact]
-        public void BancoSnorlexNegativeSale()
-        {
-            _account.Sale = -1000;
-            _account.Sale.Should().BeGreaterOrEqualTo(_account.NegativeSale);
+            var error = Assert.Throws<AccountException>(() => _accountRepository.Add(account));
+            error.ListErrors[0].Should().Be("Código da agência não pode ser zero.");
+            error.ListErrors[1].Should().Be("Não é permitido saldo abaixo de -1000.00.");
         }
     }
 }
