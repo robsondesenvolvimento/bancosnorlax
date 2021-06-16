@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BancoSnorlax.Services.Common.Erros
 {
@@ -13,6 +9,6 @@ namespace BancoSnorlax.Services.Common.Erros
         public AccountException(string[] listErrors)
         {
             ListErrors = listErrors;
-        }        
+        }
     }
 }

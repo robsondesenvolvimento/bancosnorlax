@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BancoSnorlax.Domain.Contracts
 {
     public interface IReadBankSnorlax<T>
     {
-        IEnumerable<T> ListALl();
+        IEnumerable<T> ListALL();
         T Find(int id);
     }
 }

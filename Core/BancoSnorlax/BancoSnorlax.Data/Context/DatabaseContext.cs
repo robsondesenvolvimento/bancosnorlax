@@ -1,10 +1,5 @@
 ﻿using BancoSnorlax.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BancoSnorlax.Data.Context
 {
@@ -13,11 +8,11 @@ namespace BancoSnorlax.Data.Context
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
         }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured) optionsBuilder.UseInMemoryDatabase("Teste");
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //if (!optionsBuilder.IsConfigured) 
+                optionsBuilder.UseSqlite(@"Data Source=..\BancoSnorlax.db");
+        }
 
         public DbSet<Account> Accounts { get; set; }
     }

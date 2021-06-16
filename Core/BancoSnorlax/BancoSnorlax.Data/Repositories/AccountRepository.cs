@@ -5,8 +5,6 @@ using BancoSnorlax.Services.Common.Validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BancoSnorlax.Data.Repositories
 {
@@ -29,18 +27,20 @@ namespace BancoSnorlax.Data.Repositories
                 accountValidator.Errors.ForEach(s => listErrors.Add(s.ErrorMessage));
 
                 throw new AccountException(listErrors.ToArray());
-            }                
+            }
+            var add = _context.Accounts.Add(obj).Entity;
+            _context.SaveChanges();
+            return add;
 
-            return _context.Accounts.Add(obj).Entity;
         }
 
         public Account Find(int id)
         {
-            var account = _context.Accounts.Find(id)??throw new NullReferenceException(nameof(id));
+            var account = _context.Accounts.Find(id) ?? throw new NullReferenceException(nameof(id));
             return account;
         }
 
-        public IEnumerable<Account> ListALl()
+        public IEnumerable<Account> ListALL()
         {
             return _context.Accounts.ToList();
         }
