@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BancoSnorlax.Domain", "Banc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BancoSnorlax.Data", "BancoSnorlax.Data\BancoSnorlax.Data.csproj", "{F35868CE-97A6-468D-AA77-206BE358BF41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoSnorlax.ApiRead", "BancoSnorlax.ApiRead\BancoSnorlax.ApiRead.csproj", "{D4CFDB82-B73F-4939-B7AB-7E05249C34E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BancoSnorlax.ApiRead", "BancoSnorlax.ApiRead\BancoSnorlax.ApiRead.csproj", "{D4CFDB82-B73F-4939-B7AB-7E05249C34E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoSnorlax.ApiWrite", "BancoSnorlax.ApiWrite\BancoSnorlax.ApiWrite.csproj", "{05FBD733-44C1-4273-A30D-CA1A6DD5F021}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BancoSnorlax.ApiWrite", "BancoSnorlax.ApiWrite\BancoSnorlax.ApiWrite.csproj", "{05FBD733-44C1-4273-A30D-CA1A6DD5F021}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoSnorlax.Services.Common", "BancoSnorlax.Services.Common\BancoSnorlax.Services.Common.csproj", "{5F7767E7-FE67-4586-BCB3-7F0952220697}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BancoSnorlax.Services.Common", "BancoSnorlax.Services.Common\BancoSnorlax.Services.Common.csproj", "{5F7767E7-FE67-4586-BCB3-7F0952220697}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoSnorlax.IdentityServer", "BancoSnorlax.IdentityServer\BancoSnorlax.IdentityServer.csproj", "{F857054D-4D23-486B-A1D9-4B6B3024945B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{5F7767E7-FE67-4586-BCB3-7F0952220697}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F7767E7-FE67-4586-BCB3-7F0952220697}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F7767E7-FE67-4586-BCB3-7F0952220697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F857054D-4D23-486B-A1D9-4B6B3024945B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F857054D-4D23-486B-A1D9-4B6B3024945B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F857054D-4D23-486B-A1D9-4B6B3024945B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F857054D-4D23-486B-A1D9-4B6B3024945B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

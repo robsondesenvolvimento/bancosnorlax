@@ -4,6 +4,7 @@ using BancoSnorlax.Domain.Entities;
 using BancoSnorlax.Services.Common.Erros;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using Xunit;
 
@@ -14,7 +15,15 @@ namespace BancoSnorlax.Test
         [Fact]
         public void BancoSnorlaxTryExceptValidatorAgencyAndNegativeValue()
         {
-            var options = new DbContextOptionsBuilder<DatabaseContext>().UseInMemoryDatabase(Guid.NewGuid().ToString()).Options;
+            var serviceProvider = new ServiceCollection()
+                .AddEntityFrameworkInMemoryDatabase()
+                .AddScoped<IAccountRepository, AccountRepository>()
+                .BuildServiceProvider();
+
+            var options = new DbContextOptionsBuilder<DatabaseContext>()
+                .UseInternalServiceProvider(serviceProvider)
+                .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options;
+
             var databaseContext = new DatabaseContext(options);
 
             var _accountRepository = new AccountRepository(databaseContext);
@@ -29,7 +38,15 @@ namespace BancoSnorlax.Test
         [Fact]
         public void BancoSnorlaxAddAndFindAccount()
         {
-            var options = new DbContextOptionsBuilder<DatabaseContext>().UseInMemoryDatabase(Guid.NewGuid().ToString()).Options;
+            var serviceProvider = new ServiceCollection()
+                .AddEntityFrameworkInMemoryDatabase()
+                .AddScoped<IAccountRepository, AccountRepository>()
+                .BuildServiceProvider();
+
+            var options = new DbContextOptionsBuilder<DatabaseContext>()
+                .UseInternalServiceProvider(serviceProvider)
+                .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options;
+
             var databaseContext = new DatabaseContext(options);
 
             var _accountRepository = new AccountRepository(databaseContext);
