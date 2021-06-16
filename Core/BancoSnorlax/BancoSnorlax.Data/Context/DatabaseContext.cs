@@ -11,7 +11,7 @@ namespace BancoSnorlax.Data.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //if (!optionsBuilder.IsConfigured) 
-                optionsBuilder.UseSqlite(@"Data Source=..\BancoSnorlax.db");
+            optionsBuilder.UseSqlite(@"Data Source=..\BancoSnorlax.db");
         }
 
         public DbSet<Account> Accounts { get; set; }

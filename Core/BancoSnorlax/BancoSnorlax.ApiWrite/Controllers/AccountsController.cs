@@ -1,7 +1,8 @@
 ﻿using BancoSnorlax.Data.Repositories;
+using BancoSnorlax.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BancoSnorlax.ApiRead.Controllers
+namespace BancoSnorlax.ApiWrite.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -14,10 +15,14 @@ namespace BancoSnorlax.ApiRead.Controllers
             _accountRepository = accountRepository;
         }
 
-        [HttpGet]
-        public ActionResult Get()
+        [HttpPost]
+        public ActionResult Post([FromBody] Account account)
         {
-            return Ok(_accountRepository.ListALL());
+            if (!ModelState.IsValid) return BadRequest(account);
+
+            var accountNew = _accountRepository.Add(account);
+
+            return Created("", accountNew);
         }
     }
 }
