@@ -1,7 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from "react";
+import { getAccountsFromApi } from './helpers/RequestsApi'
 
 function App() {
+  const [result, setResult] = useState(null);  
+    setResult(getAccountsFromApi());
+    return result
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,8 +23,9 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a>        
       </header>
+      <p>Account: </p>
     </div>
   );
 }
